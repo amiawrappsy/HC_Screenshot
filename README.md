@@ -45,6 +45,7 @@ All settings, including hotkeys, resolution, supersampling, transparency, output
 ### Tips
 
 - The transparent background only removes empty space. Anything the camera actually sees, such as a map, floor or 3D backdrop, still appears in the image, so hide it first.
+- You may hear the game's camera shutter sound when pressing a hotkey, for example Shift+F11. That's harmless: the game plays the sound before trying its own screenshot, which the plugin blocks, so no extra file is saved.
 - If semi-transparent edges like hair look wrong in transparent shots, turn off **Post-processing in transparent shots**.
 - Large renders take a few seconds. At the default settings (3840×2160, 2× supersampling) it's about 4–6 seconds. Higher supersampling costs a lot more: 3× at 3840×2160 can take around 30 seconds and uses a lot of memory.
 
