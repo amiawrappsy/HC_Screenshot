@@ -21,6 +21,10 @@ namespace HC_Screenshot
             ("ScreenshotHandlerBase", "SaveScreenshot"),
             ("ScreenshotHandlerBase", "SaveScreenshotScreenSize"),
             ("ScreenshotHandlerBase", "SaveScreenshotSimple"),
+            // Used by DigitalCraft (CreatePngBytes, used for scene thumbnails, is left alone)
+            ("DigitalCraft.GameScreenShotURP", "Capture"),
+            ("DigitalCraft.GameScreenShot", "Capture"),
+            ("DigitalCraft.GameScreenShot", "UnityCapture"),
             // Older component-based screenshot helpers
             ("ILLGames.Unity.Component.GameScreenShot", "Capture"),
             ("ILLGames.Unity.Component.GameScreenShot", "UnityCapture"),

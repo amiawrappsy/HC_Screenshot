@@ -1,6 +1,6 @@
 # HC_Screenshot
 
-A screenshot plugin for **HoneyCome** (ILLGames), similar to the screenshot manager for Koikatsu. It renders screenshots at a higher resolution than your game window, with an optional transparent background, and doesn't resize the window.
+A screenshot plugin for **HoneyCome** and **DigitalCraft** (ILLGames), similar to the screenshot manager for Koikatsu. It renders screenshots at a higher resolution than your game window, with an optional transparent background, and doesn't resize the window.
 
 > **AI disclosure:** This plugin was written with AI assistance (Claude Opus 5.5, via Claude Code). I directed the work and tested it in-game, but the code was AI-generated.
 
@@ -12,7 +12,7 @@ A screenshot plugin for **HoneyCome** (ILLGames), similar to the screenshot mana
 - **Keeps post-processing** (bloom, color grading and so on) in transparent shots. You can turn this off.
 - **Hides UI** in renders.
 - **Screen capture** of the window as it looks, UI included, optionally upscaled.
-- **Blocks the game's built-in F11 screenshot** so you don't get duplicate or black images. You can turn this off. Card photos in the maker are unaffected.
+- **Blocks the game's built-in F11 screenshot** in both HoneyCome and DigitalCraft, so you don't get duplicate or black images. You can turn this off. Card photos in the maker are unaffected.
 
 ## Requirements
 
@@ -36,7 +36,7 @@ HoneyCome\BepInEx\plugins\HC_Screenshot\HC_Screenshot.dll
 | **F11** | Render a high-resolution screenshot, no UI |
 | **Shift+F11** | Turn the transparent background on or off |
 
-Screenshots are saved to `HoneyCome\UserData\cap` by default.
+Screenshots are saved to `HoneyCome\UserData\cap` by default. This includes DigitalCraft's, since it shares the main game's `UserData` folder.
 
 All settings, including hotkeys, resolution, supersampling, transparency, output folder and format (PNG or JPG), can be changed in-game with the **Configuration Manager (F1)** under "Screenshot Manager".
 
@@ -44,7 +44,7 @@ All settings, including hotkeys, resolution, supersampling, transparency, output
 
 - The transparent background only removes empty space. Anything the camera actually sees, such as a map, floor or 3D backdrop, still appears in the image, so hide it first.
 - If semi-transparent edges like hair look wrong in transparent shots, turn off **Post-processing in transparent shots**.
-- Large renders take a few seconds. At the default settings (3840×2160, 2× supersampling) it's about 4–6 seconds.
+- Large renders take a few seconds. At the default settings (3840×2160, 2× supersampling) it's about 4–6 seconds. Higher supersampling costs a lot more: 3× at 3840×2160 can take around 30 seconds and uses a lot of memory.
 
 ## Building
 
@@ -61,4 +61,12 @@ The build copies the DLL into the game's `BepInEx\plugins\HC_Screenshot` folder 
 
 ## Compatibility
 
-Tested in HoneyCome (character maker). It's also set to load in DigitalCraft, but that hasn't been tested.
+Tested in HoneyCome (character maker) and DigitalCraft.
+
+**DigitalCraft doesn't load BepInEx?** On some installs, the `DigitalCraft` folder is missing the files that start BepInEx, so no plugins load there at all. This isn't specific to this plugin. To fix it, copy `winhttp.dll` and `doorstop_config.ini` from the HoneyCome folder into `HoneyCome\DigitalCraft\`. Then edit the copied `doorstop_config.ini` so these three lines point back to the main folder, using your own install path:
+
+```ini
+target_assembly = C:\path\to\HoneyCome\BepInEx\core\BepInEx.Unity.IL2CPP.dll
+coreclr_path = C:\path\to\HoneyCome\dotnet\coreclr.dll
+corlib_dir = C:\path\to\HoneyCome\dotnet
+```

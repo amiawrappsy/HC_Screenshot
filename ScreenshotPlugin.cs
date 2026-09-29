@@ -72,7 +72,7 @@ namespace HC_Screenshot
                 new ConfigDescription("Multiply the window resolution by this factor for screen captures (the UI is scaled up too).", new AcceptableValueRange<int>(1, 4)));
 
             OutputFolder = Config.Bind("Output", "Folder", "",
-                "Folder to save screenshots to. Leave empty to use UserData/cap in the game folder.");
+                "Folder to save screenshots to. Leave empty to use UserData/cap in the HoneyCome folder (shared with DigitalCraft).");
             Format = Config.Bind("Output", "Format", ImageFormat.PNG,
                 "Image format for non-transparent screenshots. Transparent renders are always PNG.");
             JpgQuality = Config.Bind("Output", "JPG quality", 95,
@@ -88,11 +88,23 @@ namespace HC_Screenshot
         {
             var dir = OutputFolder.Value;
             if (string.IsNullOrWhiteSpace(dir))
-                dir = Path.Combine(Paths.GameRootPath, "UserData", "cap");
+                dir = Path.Combine(GetUserDataDir(), "cap");
             else if (!Path.IsPathRooted(dir))
                 dir = Path.Combine(Paths.GameRootPath, dir);
             Directory.CreateDirectory(dir);
             return dir;
+        }
+
+        /// <summary>
+        /// DigitalCraft lives in a subfolder of HoneyCome and uses the main game's UserData folder,
+        /// so screenshots from both end up in the same place.
+        /// </summary>
+        private static string GetUserDataDir()
+        {
+            var parentUserData = Path.GetFullPath(Path.Combine(Paths.GameRootPath, "..", "UserData"));
+            if (Paths.ProcessName == "DigitalCraft" && Directory.Exists(parentUserData))
+                return parentUserData;
+            return Path.Combine(Paths.GameRootPath, "UserData");
         }
 
         internal static string GetFilename(string suffix, string extension)
