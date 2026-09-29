@@ -21,10 +21,11 @@ A screenshot plugin for **HoneyCome** (ILLGames), similar to the screenshot mana
 
 ## Installation
 
-Copy `HC_Screenshot.dll` into:
+1. Download the latest `HC_Screenshot_vX.X.X.zip` from the [Releases](https://github.com/amiawrappsy/HC_Screenshot/releases) page.
+2. Extract it into your HoneyCome game folder, the one containing `HoneyCome.exe`. The DLL will end up in:
 
 ```
-HoneyCome\BepInEx\plugins\HC_Screenshot\
+HoneyCome\BepInEx\plugins\HC_Screenshot\HC_Screenshot.dll
 ```
 
 ## Usage
