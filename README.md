@@ -5,6 +5,8 @@ A screenshot plugin for **HoneyCome** and **DigitalCraft** (ILLGames), similar t
 > **AI disclosure:** This plugin was written with AI assistance (Claude Opus 5.5, via Claude Code). I directed the work and tested it in-game, but the code was AI-generated.
 
 ## Features
+<img width="1281" height="766" alt="image" src="https://github.com/user-attachments/assets/716bafcf-9517-4515-a712-71aa434ccfeb" />
+
 
 - **High-resolution renders** at any size up to your GPU's limit (usually 16384 px), regardless of window size.
 - **Supersampling** (1–4×) for smooth, anti-aliased edges.
