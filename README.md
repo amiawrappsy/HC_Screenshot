@@ -32,6 +32,12 @@ This is a standalone plugin for HoneyCome and DigitalCraft only. You don't need 
 HoneyCome\BepInEx\plugins\HC_Screenshot\HC_Screenshot.dll
 ```
 
+3. **If you've installed the DigitalCraft HF Patch,** DigitalCraft has its own separate BepInEx folder. Extract the zip into `HoneyCome\DigitalCraft\` as well, so the DLL is also in:
+
+```
+HoneyCome\DigitalCraft\BepInEx\plugins\HC_Screenshot\HC_Screenshot.dll
+```
+
 ## Usage
 
 | Hotkey | Action |
@@ -68,7 +74,7 @@ The build copies the DLL into the game's `BepInEx\plugins\HC_Screenshot` folder 
 
 Tested in HoneyCome (character maker) and DigitalCraft.
 
-**DigitalCraft doesn't load BepInEx?** On some installs, the `DigitalCraft` folder is missing the files that start BepInEx, so no plugins load there at all. This isn't specific to this plugin. To fix it, copy `winhttp.dll` and `doorstop_config.ini` from the HoneyCome folder into `HoneyCome\DigitalCraft\`. Then edit the copied `doorstop_config.ini` so these three lines point back to the main folder, using your own install path:
+**DigitalCraft doesn't load BepInEx?** On some installs, the `DigitalCraft` folder is missing the files that start BepInEx, so no plugins load there at all. This isn't specific to this plugin. The easiest fix is to install the **DigitalCraft HF Patch**, which gives DigitalCraft its own BepInEx (see Installation step 3). Alternatively, copy `winhttp.dll` and `doorstop_config.ini` from the HoneyCome folder into `HoneyCome\DigitalCraft\`. Then edit the copied `doorstop_config.ini` so these three lines point back to the main folder, using your own install path:
 
 ```ini
 target_assembly = C:\path\to\HoneyCome\BepInEx\core\BepInEx.Unity.IL2CPP.dll
