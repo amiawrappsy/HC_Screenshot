@@ -4,7 +4,7 @@ A screenshot plugin for **HoneyCome** and **DigitalCraft** (ILLGames), similar t
 
 > **AI disclosure:** This plugin was written with AI assistance (Claude Opus 5.5, via Claude Code). I directed the work and tested it in-game, but the code was AI-generated.
 
-This is a standalone plugin for HoneyCome and DigitalCraft only. You don't need the SamabakeScramble version installed. If you also play SamabakeScramble, it has its own separate version: [SVS_Screenshot](https://github.com/amiawrappsy/SVS_Screenshot).
+This is a standalone plugin for HoneyCome and DigitalCraft only. You don't need any of the other versions installed. If you also play other ILLGames titles, they have their own separate versions: [SVS_Screenshot](https://github.com/amiawrappsy/SVS_Screenshot) (SamabakeScramble) and [AC_Screenshot](https://github.com/amiawrappsy/AC_Screenshot) (Aicomi).
 
 ## Features
 <img width="1281" height="766" alt="image" src="https://github.com/user-attachments/assets/716bafcf-9517-4515-a712-71aa434ccfeb" />
